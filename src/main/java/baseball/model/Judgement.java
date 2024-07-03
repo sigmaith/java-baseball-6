@@ -12,7 +12,7 @@ public class Judgement {
         ballCnt = 0;
     }
 
-    public void judgeStrike(User user, Computer computer){
+    public void judgeStrike(User user, Computer computer) {
         setStrikeCntZero();
         List<Integer> userNumber = user.getUserInputNumber();
         List<Integer> computerNumber = computer.getRandomNumber();
@@ -21,7 +21,22 @@ public class Judgement {
         }
     }
 
+    public void judgeBall(User user, Computer computer) {
+        setBallCntZero();
+        List<Integer> userNumber = user.getUserInputNumber();
+        List<Integer> computerNumber = computer.getRandomNumber();
+        for (int i = 0; i < 3; i++) {
+            if (computerNumber.contains(userNumber.get(i)) && !Objects.equals(userNumber.get(i), computerNumber.get(i))) {
+                ballCnt++;
+            }
+        }
+    }
+
     private void setStrikeCntZero(){
         strikeCnt = 0;
+    }
+
+    private void setBallCntZero() {
+        ballCnt = 0;
     }
 }
