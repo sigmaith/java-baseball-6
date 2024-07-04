@@ -7,7 +7,7 @@ import java.util.List;
 public class Computer {
     private List<Integer> randomNumber;
 
-    Computer(){
+    public Computer(){
         randomNumber = new ArrayList<>();
     }
 
