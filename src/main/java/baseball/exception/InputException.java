@@ -3,7 +3,7 @@ package baseball.exception;
 public class InputException {
     private static final int USER_INPUT_SIZE = 3;
 
-    public static String isThreeDifferentDigits(String userInput) {
+    public static String isValidInput(String userInput) {
         if (!userInput.matches("[1-9]{3}")) {
             throw new IllegalArgumentException();
         }
