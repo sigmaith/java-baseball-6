@@ -12,5 +12,10 @@ public class InputException {
         }
         return userInput;
     }
+
+    public static String isOneOrTwo(String userInput) {
+        if (!userInput.matches("[1-2]{1}")) throw new IllegalArgumentException();
+        return userInput;
+    }
 }
 
