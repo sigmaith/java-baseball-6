@@ -7,8 +7,13 @@ import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class GameController {
-    User user = new User();
-    Computer computer = new Computer();
+    private final User user;
+    private final Computer computer;
+
+    public GameController(User user, Computer computer) {
+        this.user = user;
+        this.computer = computer;
+    }
 
     public void gameStart() {
         Judgement judgement = new Judgement();
