@@ -9,9 +9,10 @@ import baseball.view.OutputView;
 public class GameController {
     User user = new User();
     Computer computer = new Computer();
-    Judgement judgement = new Judgement();
 
     public void gameStart() {
+        Judgement judgement = new Judgement();
+
         OutputView.printGameStartMessage();
         computer.generateRandomNumber();
 
@@ -24,6 +25,11 @@ public class GameController {
         }
 
         OutputView.printGameEndMessage();
+        gameRestartOrNot();
+    }
 
+    private void gameRestartOrNot(){
+        String userInput = InputView.getUserInputRestartOrEnd();
+        if (userInput.equals("1")) gameStart();
     }
 }
