@@ -39,11 +39,11 @@ public class Judgement {
         return false;
     }
 
-    public int getStrikeCntZero() {
+    public int getStrikeCnt() {
         return strikeCnt;
     }
 
-    public int getBallCntZero() {
+    public int getBallCnt() {
         return ballCnt;
     }
 }
