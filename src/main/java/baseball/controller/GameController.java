@@ -23,8 +23,8 @@ public class GameController {
         judgement.clearCnt();
 
         while (judgement.getStrikeCnt() != 3) {
-            String userInput = InputView.getUserInput();
-            user.setUserInputNumber(userInput);
+            String expectedNumberOfUser = InputView.getExpectedNumberOfUser();
+            user.setUserInputNumber(expectedNumberOfUser);
 
             if (judgement.isNothing(user, computer)) {
                 continue;
@@ -38,8 +38,8 @@ public class GameController {
     }
 
     private void gameRestartOrNot() {
-        String userInput = InputView.getUserInputRestartOrEnd();
-        if (userInput.equals("1")) {
+        String valueOfRestartGameOrNot = InputView.getValueOfRestartGameOrNot();
+        if (valueOfRestartGameOrNot.equals("1")) {
             gameStart();
         }
     }
