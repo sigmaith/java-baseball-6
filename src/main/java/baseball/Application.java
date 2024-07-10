@@ -2,6 +2,7 @@ package baseball;
 
 import baseball.controller.GameController;
 import baseball.model.Computer;
+import baseball.model.Judgement;
 import baseball.model.User;
 
 public class Application {
@@ -9,8 +10,9 @@ public class Application {
         // TODO: 프로그램 구현
         User user = new User();
         Computer computer = new Computer();
+        Judgement judgement = new Judgement();
 
-        GameController gameController = new GameController(user, computer);
+        GameController gameController = new GameController(user, computer, judgement);
         gameController.gameStart();
     }
 }
