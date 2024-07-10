@@ -26,16 +26,21 @@ public class GameController {
             String userInput = InputView.getUserInput();
             user.setUserInputNumber(userInput);
 
-            if (judgement.isNothing(user, computer)) continue;
-            else OutputView.printBallAndStrikeOrNothing(judgement.getBallCnt(), judgement.getStrikeCnt());
+            if (judgement.isNothing(user, computer)) {
+                continue;
+            } else {
+                OutputView.printBallAndStrikeOrNothing(judgement.getBallCnt(), judgement.getStrikeCnt());
+            }
         }
 
         OutputView.printGameEndMessage();
         gameRestartOrNot();
     }
 
-    private void gameRestartOrNot(){
+    private void gameRestartOrNot() {
         String userInput = InputView.getUserInputRestartOrEnd();
-        if (userInput.equals("1")) gameStart();
+        if (userInput.equals("1")) {
+            gameStart();
+        }
     }
 }
