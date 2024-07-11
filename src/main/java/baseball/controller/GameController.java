@@ -19,9 +19,18 @@ public class GameController {
 
     public void gameStart() {
         OutputView.printGameStartMessage();
+        completeBasicSetUp();
+        continueGameUntilThreeStrike();
+        OutputView.printGameEndMessage();
+        gameRestartOrNot();
+    }
+
+    private void completeBasicSetUp(){
         computer.generateRandomNumber();
         judgement.clearCnt();
+    }
 
+    private void continueGameUntilThreeStrike(){
         while (judgement.getStrikeCnt() != 3) {
             String expectedNumberOfUser = InputView.getExpectedNumberOfUser();
             user.setUserInputNumber(expectedNumberOfUser);
@@ -32,9 +41,6 @@ public class GameController {
                 OutputView.printBallAndStrikeOrNothing(judgement.getBallCnt(), judgement.getStrikeCnt());
             }
         }
-
-        OutputView.printGameEndMessage();
-        gameRestartOrNot();
     }
 
     private void gameRestartOrNot() {
