@@ -2,6 +2,7 @@ package baseball.controller;
 
 import baseball.model.Computer;
 import baseball.model.Judgement;
+import baseball.model.Random;
 import baseball.model.User;
 import baseball.view.InputView;
 import baseball.view.OutputView;
@@ -26,7 +27,7 @@ public class GameController {
     }
 
     private void completeBasicSetUp(){
-        computer.generateRandomNumber();
+        computer.setRandomNumber(Random.getRandomNumber());
         judgement.clearCnt();
     }
 
