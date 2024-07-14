@@ -7,12 +7,23 @@ public class Judgement {
     private int strikeCnt;
     private int ballCnt;
 
+    public boolean isNothing(User user, Computer computer) {
+        judgeStrike(user, computer);
+        judgeBall(user, computer);
+        if (strikeCnt == 0 && ballCnt == 0) {
+            return true;
+        }
+        return false;
+    }
+
     private void judgeStrike(User user, Computer computer) {
         strikeCnt = 0;
         List<Integer> userNumber = user.getUserInputNumber();
         List<Integer> computerNumber = computer.getRandomNumber();
         for (int i = 0; i < 3; i++) {
-            if (Objects.equals(userNumber.get(i), computerNumber.get(i))) strikeCnt++;
+            if (Objects.equals(userNumber.get(i), computerNumber.get(i))) {
+                strikeCnt++;
+            }
         }
     }
 
@@ -27,13 +38,6 @@ public class Judgement {
         }
     }
 
-    public boolean isNothing(User user, Computer computer) {
-        judgeStrike(user, computer);
-        judgeBall(user, computer);
-        if (strikeCnt == 0 && ballCnt == 0) return true;
-        return false;
-    }
-
     public int getStrikeCnt() {
         return strikeCnt;
     }
@@ -42,7 +46,7 @@ public class Judgement {
         return ballCnt;
     }
 
-    public void clearCnt(){
+    public void clearCnt() {
         strikeCnt = 0;
         ballCnt = 0;
     }
