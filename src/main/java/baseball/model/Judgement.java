@@ -7,7 +7,7 @@ public class Judgement {
     private int strikeCnt;
     private int ballCnt;
 
-    public boolean isNothing(User user, Computer computer) {
+    public boolean judgeWhetherNothing(User user, Computer computer) {
         judgeStrike(user, computer);
         judgeBall(user, computer);
         if (strikeCnt == 0 && ballCnt == 0) {

@@ -18,7 +18,7 @@ class JudgementTest {
         List<Integer> randomNumber = new ArrayList<>(Arrays.asList(5, 6, 7));
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("123");
-        assertThat(judgement.isNothing(user, computer)).isEqualTo(true);
+        assertThat(judgement.judgeWhetherNothing(user, computer)).isEqualTo(true);
     }
 
     @Test
@@ -31,7 +31,7 @@ class JudgementTest {
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("123");
 
-        assertThat(judgement.isNothing(user, computer)).isEqualTo(false);
+        assertThat(judgement.judgeWhetherNothing(user, computer)).isEqualTo(false);
     }
 
     @Test
@@ -43,7 +43,7 @@ class JudgementTest {
 
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("315");
-        judgement.isNothing(user, computer);
+        judgement.judgeWhetherNothing(user, computer);
 
         assertThat(judgement.getStrikeCnt()).isEqualTo(0);
         assertThat(judgement.getBallCnt()).isEqualTo(2);
@@ -58,7 +58,7 @@ class JudgementTest {
 
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("125");
-        judgement.isNothing(user, computer);
+        judgement.judgeWhetherNothing(user, computer);
 
         assertThat(judgement.getStrikeCnt()).isEqualTo(2);
         assertThat(judgement.getBallCnt()).isEqualTo(0);
@@ -73,7 +73,7 @@ class JudgementTest {
 
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("321");
-        judgement.isNothing(user, computer);
+        judgement.judgeWhetherNothing(user, computer);
 
         assertThat(judgement.getStrikeCnt()).isEqualTo(1);
         assertThat(judgement.getBallCnt()).isEqualTo(2);
@@ -88,7 +88,7 @@ class JudgementTest {
 
         computer.setRandomNumber(randomNumber);
         user.setUserInputNumber("123");
-        judgement.isNothing(user, computer);
+        judgement.judgeWhetherNothing(user, computer);
 
         assertThat(judgement.getStrikeCnt()).isEqualTo(3);
         assertThat(judgement.getBallCnt()).isEqualTo(0);
