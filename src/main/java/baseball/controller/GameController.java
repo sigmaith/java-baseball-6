@@ -36,11 +36,8 @@ public class GameController {
             String expectedNumberOfUser = InputView.getExpectedNumberOfUser();
             user.setUserInputNumber(expectedNumberOfUser);
 
-            if (judgement.isNothing(user, computer)) {
-                continue;
-            } else {
-                OutputView.printBallAndStrikeOrNothing(judgement.getBallCnt(), judgement.getStrikeCnt());
-            }
+            judgement.judgeWhetherNothing(user, computer);
+            OutputView.printBallAndStrikeOrNothing(judgement.getBallCnt(), judgement.getStrikeCnt());
         }
     }
 
